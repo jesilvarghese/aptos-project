@@ -1,0 +1,23 @@
+<div class="select-container">
+    <div (click)="toggleDropdown()">
+        <input type="text"      
+            placeholder="Select an option"
+            #inputTag
+            class="custom-select-dropdown"
+            [value]="selectedValue" [ngClass]="{'defaultVal' : selectedValue}"/>
+            <i *ngIf ="!expanded" class="chevron bottom"></i>
+            <i *ngIf ="expanded" class="chevron top"></i>
+    </div>
+    <ul #dropdownMenu class="select-menu" role="listbox" *ngIf="expanded">   
+        <div class="list-scroll"> 
+            <li role="option"
+            *ngFor="let option of options" 
+            [title]="option.name"
+            class="option-item"
+            [ngClass]="{ 'selected': option.id === 'option3'}"
+            (click)="onSelection(option)">
+            <span>{{option.name}}</span>
+            </li>
+        </div>
+    </ul>
+</div>

@@ -1,0 +1,90 @@
+.custom-select-dropdown{
+  min-height: 30px;
+  min-width: 400px;
+  border: 1px solid lightgrey;
+  border-radius: 10px;
+  padding-left: 1rem;
+  cursor: pointer;
+  color: gray;
+  font-weight: 500;
+  &:focus {
+    outline: none;
+  }
+  
+}
+::placeholder {
+  color: black;
+  opacity: 0.5;
+}
+.chevron::before {
+	border-style: solid;
+	border-width: 0.1em 0.1em 0 0;
+	content: '';
+	display: inline-block;
+	height: 0.45em;
+	left: 0.15em;
+	position: relative;
+	top: 0.15em;
+	transform: rotate(-45deg);
+	vertical-align: top;
+	width: 0.45em;
+  color: gray;
+}
+.chevron.bottom:before {
+	top: -23px;
+	transform: rotate(135deg);
+  left: 395px;
+  cursor: pointer;
+}
+.chevron.top:before {
+	top: -20px;
+  left: 395px;
+  cursor: pointer;
+}
+.select-container {
+  position: relative;
+  width: 420px;
+  ::-webkit-scrollbar {
+      width: 2px;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: darkgray;
+  }
+  ::-webkit-scrollbar-track {
+    width: 20px;
+  }
+  .select-menu {
+    width: 100%;
+    z-index: 100;
+    position: absolute;
+    top: 30px;
+    right: 0;
+    background-color: white;
+    padding: 1rem;
+    box-sizing: border-box;
+    border-radius: 10px;
+    padding-top: 0px;
+    list-style: none;
+    border: 1px solid lightgray;
+    .list-scroll {
+      max-height: 270px;
+      overflow-y: scroll;
+      overflow-x: hidden;
+      margin-top: 10px;
+    }
+    .option-item {
+      padding-left: 1rem;
+      line-height: 3rem;
+      font-weight: 400;
+      color: darkslategrey;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      margin: 0 -1rem;
+      cursor: pointer;
+      font-family: system-ui;
+      &.selected,&:hover {
+        background-color: aliceblue;
+      }
+    }
+  }
+}
